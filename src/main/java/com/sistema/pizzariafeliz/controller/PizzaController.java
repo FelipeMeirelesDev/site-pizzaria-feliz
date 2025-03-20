@@ -22,5 +22,10 @@ public class PizzaController {
     public Pizza salvarPizza(@RequestBody Pizza pizza) {
         return pizzaService.salvarPizza(pizza);
     }
+
+    @DeleteMapping(value = "/{id}")
+    public void deletarPizza(@PathVariable Long id) {
+        pizzaService.deletarPizza(id);
+    }
 }
 

@@ -9,6 +9,7 @@ public class CarrinhoItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     @ManyToOne
     private Pizza pizza;
 

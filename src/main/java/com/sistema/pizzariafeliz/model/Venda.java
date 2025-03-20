@@ -14,6 +14,8 @@ public class Venda {
 
     private Double total;
 
+    // O Hibernate nomeou a tabela intermediária como "tb_venda_itens"
+    // combinando o nome da entidade "tb_venda" com o atributo "itens".
     @OneToMany(cascade = CascadeType.ALL)
     private List<CarrinhoItem> itens;
 
