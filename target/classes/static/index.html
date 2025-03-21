@@ -1,60 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Pizza</title>
+    <title>Pizzaria Feliz</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-    <h1>Cadastro de Pizza</h1>
-    <form id="pizzaForm">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
-
-        <label for="descricao">Descrição:</label>
-        <textarea id="descricao" name="descricao" rows="4" required></textarea>
-
-        <label for="preco">Preço:</label>
-        <input type="number" id="preco" name="preco" step="0.01" required>
-
-        <button type="submit">Cadastrar Pizza</button>
-    </form>
+<div class="cartoes-container">
+    <!-- Primeira linha de cartões -->
+    <div class="linha">
+        <div class="cartao">
+            <div class="cartao-left">
+                <img src="img\calabresa.jpg" alt="">
+            </div>
+            <div class="cartao-right">
+                <h2>Calabresa</h2>
+                <small><p>Molho de tomate, Calabresa e Cebola</p></small>
+                <div class="preco">
+                    <p><b>R$45,00</b></p>
+                </div>
+                <button onclick="setPreco(45.00)">Comprar</button>
+            </div>
+        </div>
+        <div class="cartao">
+            <div class="cartao-left">
+                <img src="img\frango.png" alt="">
+            </div>
+            <div class="cartao-right">
+                <h2>Frango</h2>
+                <small><p>Molho de tomate, mussarela, frango e molho para churrasco</p></small>
+                <div class="preco">
+                    <p><b>R$60,00</b></p>
+                </div>
+                <button onclick="setPreco(60.00)">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Segunda linha de cartões -->
+    <div class="linha">
+        <div class="cartao">
+            <div class="cartao-left">
+                <img src="img\quatro_queijos.png" alt="">
+            </div>
+            <div class="cartao-right">
+                <h2>Quatro Queijos</h2>
+                <small><p>Queijo provolone, mussarela, parmesão e gorgonzola</p></small>
+                <div class="preco">
+                    <p><b>R$50,00</b></p>
+                </div>
+                <button onclick="setPreco(50.00)">Comprar</button>
+            </div>
+        </div>
+        <div class="cartao">
+            <div class="cartao-left">
+                <img src="img\presunto.png" alt="">
+            </div>
+            <div class="cartao-right">
+                <h2>Presunto</h2>
+                <small><p>Mussarela, Presunto, Cebola e Tomate</p></small>
+                <div class="preco">
+                    <p><b>R$50,00</b></p>
+                </div>
+                <button onclick="setPreco(50.00)">Comprar</button>
+            </div>
+        </div>
+    </div>
 </div>
+
 <script>
-    const form = document.getElementById("pizzaForm");
-
-    form.addEventListener("submit", async (event) => {
-        event.preventDefault();
-
-        const pizza = {
-            nome: document.getElementById("nome").value,
-            descricao: document.getElementById("descricao").value,
-            preco: parseFloat(document.getElementById("preco").value)
-        };
-
-        try {
-            // Alterando a URL para uma API personalizada
-            const response = await fetch("http://localhost:8080/pizzas", { // Substitua pela URL da sua API
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(pizza)
-            });
-
-            if (response.ok) {
-                alert("Pizza cadastrada com sucesso!");
-                form.reset();
-            } else {
-                alert("Erro ao cadastrar pizza.");
-            }
-        } catch (error) {
-            console.error(error);
-            alert("Erro na comunicação com o servidor.");
-        }
-    });
+    // Função para armazenar o valor da pizza selecionada no localStorage
+    function setPreco(valor) {
+        localStorage.setItem('preco', valor);  // Salva o valor no localStorage
+        window.location.href = 'formvenda.html';  // Redireciona para o formulário
+    }
 </script>
 </body>
 </html>

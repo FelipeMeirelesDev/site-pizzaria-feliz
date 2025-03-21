@@ -1,5 +1,5 @@
 body {
-    background-image: url(https://preview.redd.it/bp5rbf57jns41.jpg?auto=webp&s=a933a2021f4aa3eca0828ac5484d13922a4b4009);
+    background-image: url(img/wallpaper_pizza.jpg);
     background-size: cover;
     margin: 0;
     font-family: sans-serif;
@@ -40,10 +40,17 @@ body {
 }
 
 .form-pedido button {
-    background-color: rgb(0, 225, 255);
-    border-radius: 2px;
+    background-color: orangered;
+    /*rgb(90, 217, 81)*/
+    border-radius: 6px;
     font-size: 14px;
     padding: 6px;
+    border: none;
     margin-top: 8px; /* Ajusta a margem do botão */
     cursor: pointer;
+    color: #fff;
+}
+
+.form-pedido button:hover{
+    background-color: rgb(190, 51, 0);
 }

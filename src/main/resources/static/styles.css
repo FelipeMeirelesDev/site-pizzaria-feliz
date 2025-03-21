@@ -6,7 +6,7 @@ body {
     flex-direction: column;
     height: 100vh; /*Altura da janela*/
     margin: 0;
-    background-image: url(https://preview.redd.it/bp5rbf57jns41.jpg?auto=webp&s=a933a2021f4aa3eca0828ac5484d13922a4b4009);
+    background-image: url(img/wallpaper_pizza.jpg);
     background-size: cover;
 }
 
@@ -23,15 +23,15 @@ body {
 }
 
 .cartao{
-    background-color: black;
+    background-color: white;
     width: 27rem;
     height: 15rem;
     display: flex; /* Ativa o modelo flexbox */
     font-family: sans-serif;
+    border-radius: 8px;
 }
 
 .cartao-left {
-    background-color: rgb(255, 255, 255);
     width: 50%;
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
@@ -39,8 +39,6 @@ body {
 }
 
 .cartao-right {
-    
-    background-color: rgb(255, 255, 255);
     width: 50%;
     display: flex; /* Ativa flexbox */
     flex-direction: column; /* Organiza os itens verticalmente */
@@ -60,16 +58,24 @@ body {
 }
 
 .preco{
-    color: red;
+    color:orangered;
 }
 
 .cartao-right button {
-    background-color: rgb(0, 225, 255);
-    border-radius: 2px;
+    background-color: orangered;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
     padding: 8px 30;
     width: 9rem;
+    height: 1.7rem;
     font-size: 16px; /* Ajusta o tamanho do texto */
     cursor: pointer; /* Mostra o ponteiro ao passar sobre o botão */
+
+}
+
+.cartao-right button:hover{
+    background-color: rgb(190, 51, 0);
 }
 
 .cartao img{

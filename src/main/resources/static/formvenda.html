@@ -7,27 +7,69 @@
     <link rel="stylesheet" href="formvenda.css">
 </head>
 <body>
-    <div class="container-form-venda">
-        <form class="form-pedido">
-            <h3 style="font-size: 20px; margin-bottom: 10px; text-align: center;">Dados para Entrega</h3>
-            
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-            
-            <label for="telefone">Telefone:</label>
-            <input type="text" id="telefone" name="telefone" required>
-    
-            <label for="rua">Rua:</label>
-            <input type="text" id="rua" name="rua" required>
-    
-            <label for="bairro">Bairro:</label>
-            <input type="text" id="bairro" name="bairro" required>
-    
-            <label for="numero">Número:</label>
-            <input type="text" id="numero" name="numero" required>
-    
-            <button type="submit">Confirmar Pedido</button>
-        </form>
-    </div>
+<div class="container-form-venda">
+    <form class="form-pedido" id="formPedido">
+        <h3 style="font-size: 20px; margin-bottom: 10px; text-align: center;">Dados para Entrega</h3>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome_cliente" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" required>
+
+        <label for="rua">Rua:</label>
+        <input type="text" id="rua" name="rua" required>
+
+        <label for="bairro">Bairro:</label>
+        <input type="text" id="bairro" name="bairro" required>
+
+        <label for="numero">Número:</label>
+        <input type="text" id="numero" name="numero" required>
+
+        <!-- Campo oculto para armazenar o valor da pizza selecionada -->
+        <input type="hidden" id="valor" name="valor" value="">
+
+        <button type="submit">Confirmar Pedido</button>
+    </form>
+</div>
+
+<script>
+    // Captura o valor da pizza do localStorage e define no campo oculto
+    document.getElementById('valor').value = localStorage.getItem('preco');
+
+    // Função para enviar o pedido via API
+    document.getElementById('formPedido').addEventListener('submit', function(event) {
+        event.preventDefault();  // Impede o envio tradicional do formulário
+
+        // Coleta os dados do formulário
+        const formData = new FormData(this);
+
+        // Cria um objeto com os dados do formulário
+        const pedido = {};
+        formData.forEach((value, key) => {
+            pedido[key] = value;
+        });
+
+        // Envia os dados para o backend via fetch
+        fetch('http://localhost:8080/pedidos', {  // Alterado para a URL correta
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(pedido)  // Converte o objeto para JSON
+        })
+        .then(response => response.json())  // Espera a resposta do servidor em formato JSON
+        .then(data => {
+            // Se a resposta for bem-sucedida, você pode fazer algo, por exemplo, mostrar uma mensagem
+            console.log('Pedido registrado:', data);
+            alert('Pedido realizado com sucesso!');
+        })
+        .catch(error => {
+            // Em caso de erro, exibe uma mensagem de erro
+            console.error('Erro ao enviar o pedido:', error);
+            alert('Ocorreu um erro ao realizar o pedido. Tente novamente.');
+        });
+    });
+</script>
 </body>
 </html>

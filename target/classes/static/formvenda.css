@@ -1,0 +1,56 @@
+body {
+    background-image: url(https://preview.redd.it/bp5rbf57jns41.jpg?auto=webp&s=a933a2021f4aa3eca0828ac5484d13922a4b4009);
+    background-size: cover;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.container-form-venda {
+    background-color: white; /* Fundo branco */
+    width: 320px; /* Largura */
+    height: 450px; /* Altura */
+    margin: 100px auto; /* Centraliza na tela */
+    margin-top: 50px;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 10px; /* Espaçamento interno ajustado */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha os itens ao topo */
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+.form-pedido {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento compacto entre os elementos */
+    width: 100%; /* O formulário ocupa toda a largura */
+}
+
+.form-pedido label {
+    font-size: 15px; /* Reduz tamanho da fonte */
+}
+
+.form-pedido input {
+    width: 97.5%;
+    padding: 4px; /* Reduz preenchimento interno */
+    font-size: 15px; /* Reduz tamanho da fonte */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-pedido button {
+    background-color: orangered;
+    /*rgb(90, 217, 81)*/
+    border-radius: 6px;
+    font-size: 14px;
+    padding: 6px;
+    border: none;
+    margin-top: 8px; /* Ajusta a margem do botão */
+    cursor: pointer;
+    color: #fff;
+}
+
+.form-pedido button:hover{
+    background-color: rgb(190, 51, 0);
+}

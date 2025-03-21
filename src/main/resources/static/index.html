@@ -7,65 +7,73 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="cartoes-container">
-        <!-- Primeira linha de cartões -->
-        <div class="linha">
-            <div class="cartao">
-                <div class="cartao-left">
-                    <img src="img\calabresa.jpg" alt="">
-                </div>
-                <div class="cartao-right">
-                    <h2>Calabresa</h2>
-                    <small><p>Molho de tomate, Calabresa e Cebola</p></small>
-                    <div class="preco">
-                        <p><b>R$45,00</b></p>
-                    </div>
-                    <a href="formvenda.html"><button>Comprar</button></a>
-                </div>
+<div class="cartoes-container">
+    <!-- Primeira linha de cartões -->
+    <div class="linha">
+        <div class="cartao">
+            <div class="cartao-left">
+                <img src="img\calabresa.jpg" alt="">
             </div>
-            <div class="cartao">
-                <div class="cartao-left">
-                    <img src="img\frango.png" alt="">
+            <div class="cartao-right">
+                <h2>Calabresa</h2>
+                <small><p>Molho de tomate, Calabresa e Cebola</p></small>
+                <div class="preco">
+                    <p><b>R$45,00</b></p>
                 </div>
-                <div class="cartao-right">
-                    <h2>Frango</h2>
-                    <small><p>Molho de tomate, mussarela, frango, abacaxi e molho para churrasco</p></small>
-                    <div class="preco">
-                        <p><b>R$60,00</b></p>
-                    </div>
-                    <button>Comprar</button>
-                </div>
+                <button onclick="setPreco(45.00)">Comprar</button>
             </div>
         </div>
-        <!-- Segunda linha de cartões -->
-        <div class="linha">
-            <div class="cartao">
-                <div class="cartao-left">
-                    <img src="img\quatro_queijos.png" alt="">
-                </div>
-                <div class="cartao-right">
-                    <h2>Quatro Queijos</h2>
-                    <small><p>Queijo provolone, mussarela, parmesão e gorgonzola</p></small>
-                    <div class="preco">
-                        <p><b>R$50,00</b></p>
-                    </div>
-                    <button>Comprar</button>
-                </div>
+        <div class="cartao">
+            <div class="cartao-left">
+                <img src="img\frango.png" alt="">
             </div>
-            <div class="cartao">
-                <div class="cartao-left">
-                    <img src="img\presunto.png" alt="">
+            <div class="cartao-right">
+                <h2>Frango</h2>
+                <small><p>Molho de tomate, mussarela, frango e molho para churrasco</p></small>
+                <div class="preco">
+                    <p><b>R$60,00</b></p>
                 </div>
-                <div class="cartao-right">
-                    <h2>Presunto</h2>
-                    <small><p>Mussarela, Presunto, Cebola e Tomate</p></small>
-                    <div class="preco">
-                        <p><b>R$50,00</b></p>
-                    </div>
-                    <button>Comprar</button>
-                </div>
+                <button onclick="setPreco(60.00)">Comprar</button>
             </div>
         </div>
     </div>
+    <!-- Segunda linha de cartões -->
+    <div class="linha">
+        <div class="cartao">
+            <div class="cartao-left">
+                <img src="img\quatro_queijos.png" alt="">
+            </div>
+            <div class="cartao-right">
+                <h2>Quatro Queijos</h2>
+                <small><p>Queijo provolone, mussarela, parmesão e gorgonzola</p></small>
+                <div class="preco">
+                    <p><b>R$50,00</b></p>
+                </div>
+                <button onclick="setPreco(50.00)">Comprar</button>
+            </div>
+        </div>
+        <div class="cartao">
+            <div class="cartao-left">
+                <img src="img\presunto.png" alt="">
+            </div>
+            <div class="cartao-right">
+                <h2>Presunto</h2>
+                <small><p>Mussarela, Presunto, Cebola e Tomate</p></small>
+                <div class="preco">
+                    <p><b>R$50,00</b></p>
+                </div>
+                <button onclick="setPreco(50.00)">Comprar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Função para armazenar o valor da pizza selecionada no localStorage
+    function setPreco(valor) {
+        localStorage.setItem('preco', valor);  // Salva o valor no localStorage
+        window.location.href = 'formvenda.html';  // Redireciona para o formulário
+    }
+</script>
 </body>
 </html>
