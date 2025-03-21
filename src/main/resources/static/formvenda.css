@@ -1,0 +1,21 @@
+body{
+    background-image: url(https://preview.redd.it/bp5rbf57jns41.jpg?auto=webp&s=a933a2021f4aa3eca0828ac5484d13922a4b4009);
+    background-size: cover;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container-form-venda {
+    background-color: white; /* Define o fundo branco */
+    width: 700px; /* Largura do quadrado */
+    height: 450px; /* Altura do quadrado */
+    margin: 100px auto; /* Centraliza na tela */
+    margin-top: 50px;
+    border-radius: 10px; /* Bordas arredondadas (opcional) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+    padding: 20px; /* Espaçamento interno */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
