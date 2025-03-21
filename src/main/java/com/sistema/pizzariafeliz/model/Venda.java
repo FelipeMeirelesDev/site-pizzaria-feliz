@@ -12,14 +12,13 @@ public class Venda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Double total;
+    private Double valor;
+    private LocalDateTime data;
 
     // O Hibernate nomeou a tabela intermediária como "tb_venda_itens"
     // combinando o nome da entidade "tb_venda" com o atributo "itens".
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<CarrinhoItem> itens;
-
-    private LocalDateTime data;
+    //@OneToMany(cascade = CascadeType.ALL)
+    //private List<CarrinhoItem> itens;
 
     public Long getId() {
         return id;
@@ -29,22 +28,22 @@ public class Venda {
         this.id = id;
     }
 
-    public Double getTotal() {
-        return total;
+    public Double getValor() {
+        return valor;
     }
 
     public void setTotal(Double total) {
-        this.total = total;
+        this.valor = total;
     }
 
-    public List<CarrinhoItem> getItens() {
+ /*   public List<CarrinhoItem> getItens() {
         return itens;
     }
 
     public void setItens(List<CarrinhoItem> itens) {
         this.itens = itens;
     }
-
+*/
     public LocalDateTime getData() {
         return data;
     }
@@ -57,8 +56,7 @@ public class Venda {
     public String toString() {
         return "Venda{" +
                 "id=" + id +
-                ", total=" + total +
-                ", itens=" + itens +
+                ", valor=" + valor +
                 ", data=" + data +
                 '}';
     }

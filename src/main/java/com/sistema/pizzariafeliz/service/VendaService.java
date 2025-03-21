@@ -1,6 +1,5 @@
 package com.sistema.pizzariafeliz.service;
 
-import com.sistema.pizzariafeliz.model.CarrinhoItem;
 import com.sistema.pizzariafeliz.model.Venda;
 import com.sistema.pizzariafeliz.repository.VendaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,16 +13,12 @@ public class VendaService {
     @Autowired
     private VendaRepository vendaRepository;
 
-    public Venda registrarVenda(List<CarrinhoItem> itens) {
-        double total = itens.stream()
-                .mapToDouble(item -> item.getPizza().getPreco() * item.getQuantidade())
-                .sum();
-
-        Venda venda = new Venda();
-        venda.setItens(itens);
-        venda.setTotal(total);
-        venda.setData(LocalDateTime.now());
+    public Venda registrarVenda(Venda venda) {
         return vendaRepository.save(venda);
+    }
+
+    public List<Venda> listarVendas() {
+        return vendaRepository.findAll();
     }
 }
 
