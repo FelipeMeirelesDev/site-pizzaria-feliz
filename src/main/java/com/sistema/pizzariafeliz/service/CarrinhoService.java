@@ -1,8 +1,6 @@
 package com.sistema.pizzariafeliz.service;
 
-import com.sistema.pizzariafeliz.model.CarrinhoItem;
 import com.sistema.pizzariafeliz.model.Pizza;
-import com.sistema.pizzariafeliz.repository.CarrinhoItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
