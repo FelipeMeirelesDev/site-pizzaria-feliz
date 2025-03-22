@@ -1,8 +1,6 @@
-package com.sistema.pizzariafeliz.model;
+package com.sistema.pizzariamania.model;
 
 import jakarta.persistence.*;
-
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tb_pedido")

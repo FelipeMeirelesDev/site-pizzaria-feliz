@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sistema</groupId>
-	<artifactId>pizzariafeliz</artifactId>
+	<artifactId>pizzariamania</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>pizzariafeliz</name>
 	<description>Projeto de um sistema de site para uma pizzaria.</description>

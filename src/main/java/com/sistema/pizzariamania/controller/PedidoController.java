@@ -1,7 +1,7 @@
-package com.sistema.pizzariafeliz.controller;
+package com.sistema.pizzariamania.controller;
 
-import com.sistema.pizzariafeliz.model.Pedido;
-import com.sistema.pizzariafeliz.service.PedidoService;
+import com.sistema.pizzariamania.model.Pedido;
+import com.sistema.pizzariamania.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

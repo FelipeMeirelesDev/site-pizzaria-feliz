@@ -1,7 +1,7 @@
-package com.sistema.pizzariafeliz.service;
+package com.sistema.pizzariamania.service;
 
-import com.sistema.pizzariafeliz.model.Pedido;
-import com.sistema.pizzariafeliz.repository.PedidoRepository;
+import com.sistema.pizzariamania.model.Pedido;
+import com.sistema.pizzariamania.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
