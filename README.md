@@ -70,3 +70,7 @@ spring.datasource.password=sua_senha
    - Clone esse repositório
    - importe o projeto para sua IDE favorita
    - Execute a aplicação backend via sua IDE (``src/main/java/com.sistema.pizzariamania/PizzariaMania.Java``) ou Utilizando esse comando: (``mvn spring-boot:run``)
+
+4. **Execultando o Frontend**:
+   - Acesse o arquivo (``index.html``) diretamente em um navegador ou digite a URL abaixo no navegador: (``http://localhost:8080/index.html``)
+   - Isso abrirá a página inicial com o cardápio de pizzas, permitindo que os usuários visualizem as opções disponíveis e iniciem pedidos.
