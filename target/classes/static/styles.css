@@ -1,36 +1,119 @@
+/* Estilo global do body */
 body {
-    background-color: rgb(0, 0, 0);
-    display: flex; /* Ativa o modelo flexbox */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    flex-direction: column;
-    height: 100vh; /*Altura da janela*/
-    margin: 0;
-    background-image: url(https://preview.redd.it/bp5rbf57jns41.jpg?auto=webp&s=a933a2021f4aa3eca0828ac5484d13922a4b4009);
+    background-image: url(img/wallpaper_pizza.jpg);
     background-size: cover;
-}
-
-.cartoes-container{
+    margin: 0;
+    font-family: sans-serif;
     display: flex;
-    flex-direction: column; /*Linhas empilhadas*/
-    gap: 16px; /*Espaçamento entre linhas */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alinha o conteúdo ao topo */
+    height: 100vh; /* Altura total da janela */
 }
 
-.linha {
+/* Estilo do cabeçalho fixo */
+.cabecalho {
+    background-color: orangered;
+    font-family: sans-serif;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh; /* Ajuste a altura conforme necessário */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+/* Estilo do formulário de venda */
+.container-form-venda {
+    background-color: white;
+    width: 320px;
+    height: 450px;
+    margin: 100px auto;
+    margin-top: 100px; /* Ajuste a margem para o tamanho do cabeçalho */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Estilo do formulário de pedido */
+.form-pedido {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento compacto entre os elementos */
+    width: 100%;
+}
+
+/* Estilo das labels dentro do formulário */
+.form-pedido label {
+    font-size: 15px;
+}
+
+/* Estilo dos inputs dentro do formulário */
+.form-pedido input {
+    width: 97.5%;
+    padding: 4px; /* Reduz preenchimento interno */
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo do botão de submit */
+.form-pedido button {
+    background-color: orangered;
+    border-radius: 6px;
+    font-size: 14px;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.form-pedido button:hover {
+    background-color: rgb(190, 51, 0);
+}
+
+/* Estilo para o container de cartões */
+.cartoes-container {
+    display: flex;
+    flex-direction: column; /* Linhas empilhadas */
+    gap: 16px; /* Espaçamento entre linhas */
+    padding-top: 2rem;
+}
+
+/* Estilo das linhas de cartões */
+.linha1 {
+    padding-top: 25px;
     display: flex;
     justify-content: center;
     gap: 16px;
 }
 
-.cartao{
+.linha2 {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+/* Estilo de cada cartão */
+.cartao {
     background-color: white;
     width: 27rem;
     height: 15rem;
-    display: flex; /* Ativa o modelo flexbox */
+    display: flex;
     font-family: sans-serif;
     border-radius: 8px;
 }
 
+/* Estilo do lado esquerdo do cartão (imagem) */
 .cartao-left {
     width: 50%;
     display: flex;
@@ -38,29 +121,34 @@ body {
     align-items: center; /* Centraliza verticalmente */
 }
 
+/* Estilo do lado direito do cartão (texto) */
 .cartao-right {
     width: 50%;
-    display: flex; /* Ativa flexbox */
+    display: flex;
     flex-direction: column; /* Organiza os itens verticalmente */
     justify-content: center; /* Centraliza verticalmente */
-    align-items: left; /* Centraliza horizontalmente */
+    align-items: left; /* Alinha os itens à esquerda */
 }
 
-.cartao-right h2{
+/* Estilo do título no lado direito do cartão */
+.cartao-right h2 {
     padding-left: 5px;
     font-size: 20px;
 }
 
+/* Estilo do parágrafo no lado direito do cartão */
 .cartao-right p {
     justify-content: start;
     align-items: start;
-    padding-left: 5px; 
+    padding-left: 5px;
 }
 
-.preco{
-    color:orangered;
+/* Estilo do preço no lado direito do cartão */
+.preco {
+    color: orangered;
 }
 
+/* Estilo do botão de compra no lado direito do cartão */
 .cartao-right button {
     background-color: orangered;
     border-radius: 6px;
@@ -69,16 +157,16 @@ body {
     padding: 8px 30;
     width: 9rem;
     height: 1.7rem;
-    font-size: 16px; /* Ajusta o tamanho do texto */
-    cursor: pointer; /* Mostra o ponteiro ao passar sobre o botão */
-
+    font-size: 16px;
+    cursor: pointer;
 }
 
-.cartao-right button:hover{
+.cartao-right button:hover {
     background-color: rgb(190, 51, 0);
 }
 
-.cartao img{
+/* Estilo da imagem dentro do cartão */
+.cartao img {
     width: 80%;
     height: 80%;
 }
