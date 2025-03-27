@@ -56,14 +56,14 @@ Certifique-se de que as seguintes dependências estão instaladas:
 git clone https://github.com/seu-usuario/pizzaria-mania.git
 cd pizzaria-mania
 ```
-2. **Confirguração do Banco de Dados**: Abra o terminal e execulte:
+2. **Confirguração do Banco de Dados**:
    
-   - Abra o MySQL Workbench ou qualquer ferramenta de gerenciamento de banco de dados e crie um banco chamado .
+   - Abra o MySQL Workbench ou qualquer ferramenta de gerenciamento de banco de dados e crie um banco chamado (``db_pizzaria``).
    - Atualize o arquivo (``src/main/resources/application.properties``) com as suas credenciais:
 ```
 spring.datasource.url=jdbc:mysql://localhost:3306/db_pizzaria
 spring.datasource.username=seu_usuario
-spring.datasource.password=sua_senha
+spring.datasource.password=sua_senha //Se não tiver senha, deixe em branco.
 ```
 
 3. **Execultando o Backend**:
