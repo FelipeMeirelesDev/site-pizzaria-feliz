@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizzaria Feliz</title>
+    <title>Pizzaria Mania</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="cabecalho">
-        <header>Pizzaria Mania</header>
-    </div>
+<div class="cabecalho">
+    <header>Pizzaria Mania</header>
+</div>
 <div class="container-form-venda">
     <form class="form-pedido" id="formPedido">
         <h3 style="font-size: 20px; margin-bottom: 10px; text-align: center;">Dados para Entrega</h3>
@@ -20,7 +20,7 @@
         <label for="telefone">Telefone:</label>
         <input type="text" id="telefone" name="telefone" required>
 
-	<label for="bairro">Bairro:</label>
+        <label for="bairro">Bairro:</label>
         <input type="text" id="bairro" name="bairro" required>
 
         <label for="rua">Rua:</label>
@@ -35,7 +35,6 @@
         <button type="submit">Confirmar Pedido</button>
     </form>
 </div>
-
 <script>
     // Captura o valor da pizza do localStorage e define no campo oculto
     document.getElementById('valor').value = localStorage.getItem('preco');
@@ -54,21 +53,19 @@
         });
 
         // Envia os dados para o backend via fetch
-        fetch('http://localhost:8080/pedidos', {  // Alterado para a URL correta
+        fetch('http://localhost:8080/pedidos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(pedido)  // Converte o objeto para JSON
         })
-        .then(response => response.json())  // Espera a resposta do servidor em formato JSON
+        .then(response => response.json())
         .then(data => {
-            // Se a resposta for bem-sucedida, você pode fazer algo, por exemplo, mostrar uma mensagem
             console.log('Pedido registrado:', data);
             alert('Pedido realizado com sucesso!');
         })
         .catch(error => {
-            // Em caso de erro, exibe uma mensagem de erro
             console.error('Erro ao enviar o pedido:', error);
             alert('Ocorreu um erro ao realizar o pedido. Tente novamente.');
         });

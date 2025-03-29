@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="cabecalho">
-        <header>Pizzaria Mania</header>
-    </div>
+<div class="cabecalho">
+    <header>Pizzaria Mania</header>
+</div>
 <div class="cartoes-container">
     <!-- Primeira linha de cartões -->
     <div class="linha1">
@@ -70,6 +70,12 @@
         </div>
     </div>
 </div>
-    <script src="scripts/cartoes.js"></script>
+
+<script>
+    function setPreco(valor) {
+        localStorage.setItem('preco', valor);  // Salva o valor no localStorage
+        window.location.href = 'formvenda.html';  // Redireciona para o formulário
+    }
+</script>
 </body>
 </html>
