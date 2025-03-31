@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizza Mania</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
-<div class="cabecalho">
-    <header>Pizzaria Mania</header>
-</div>
-<div class="cartoes-container">
+<header class="cabecalho">
+    <nav class="navbar">
+        <h1><img src="./img/pizza-mania-logo.png" alt="Logo da Pizzaria Mania na versão SVG."></h1>
+    </nav>
+</header>
+<main>
     <!-- Primeira linha de cartões -->
+     <section>
+        <article>
+            <p>Where every fork <i><img src="./img/icone-logo-garfo.png" alt=""></i> is a joyful journey</p>
+            <p>Pizza Mania - an unparalleled pizza experience. Always sustainable, always premium. Follow us on social media to learn more!</p>
+        </article>
+        <figure><video src="./img/video-piece-pizza.mp4" autoplay loop muted></video></figure>
+     </section>
+
     <div class="linha1">
         <div class="cartao">
             <div class="cartao-left">
@@ -69,7 +82,7 @@
             </div>
         </div>
     </div>
-</div>
+</main>
 
 <script>
     function setPreco(valor) {
