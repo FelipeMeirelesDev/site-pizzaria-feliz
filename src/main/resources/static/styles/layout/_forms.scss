@@ -1,0 +1,78 @@
+@use "../base/variables" as vars;
+@use "./home" as mixins;
+
+.form-pedido {
+    color: vars.$color-dark-purple;
+    background-image: url("./../img/background-image-pizzas.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
+    h2 {
+       padding-top: 16vh;
+        text-align: center;
+        font: 700 6rem vars.$font-secundary;
+    } 
+
+    .forms-entrega {
+        fieldset {
+            border: none;
+            @include mixins.display-flex-vertical;
+
+            legend {
+                text-align: center;
+                text-transform: lowercase;
+                margin-bottom: 6vh;
+            }
+
+            .input-container {
+                position: relative;
+                margin: 6vh 3vw;
+            }
+
+            label {
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                transform: translateY(-50%);
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #412807;
+                text-transform: lowercase;
+                transition: all 0.3s ease-in-out;
+                pointer-events: none;
+            }
+
+            input {
+                width: 50vw;
+                margin: 2vh 0;
+                border: none;
+                padding: 10px 0;
+                border-bottom: solid 4px vars.$color-light-purple;
+                background: transparent;
+                font-size: 2.5rem;
+                color: vars.$color-dark-purple;
+                transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+                outline: none;
+
+                &:focus,
+                &:valid {
+                    border-bottom-color: vars.$color-dark-purple;
+                }
+
+                &:focus + label,
+                &:valid + label {
+                    top: 0;
+                    font-size: 3rem;
+                    color: vars.$color-dark-purple;
+                }
+            }
+
+            button {
+                @include mixins.button-animation(vars.$color-light-purple);
+                margin: 5vh;
+            }
+        }
+    }
+}

@@ -1,0 +1,146 @@
+@use "./../base/variables" as vars;
+
+@mixin display-flex-horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2vw;
+    flex-wrap: wrap;
+}
+
+@mixin display-flex-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin button-animation($color) {
+    cursor: pointer;
+    display: inline-block;
+    padding: 2vh 8vw;
+    border-radius: 6vw;
+    border: 6px solid vars.$color-dark-purple;
+    text-transform: lowercase;
+    color: vars.$color-dark-purple;
+    font: 400 3rem vars.$font-primary;
+    background-color: $color;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color;
+        border-radius: 6vw;
+        z-index: -2;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: darken($color, 15%);
+        transition: all 0.3s;
+        border-radius: 6vw;
+        z-index: -1;
+    }
+
+    &:hover {
+        color: #fff;
+        
+        &:before {
+            width: 100%;
+        }
+    }
+}
+
+.s-hero {
+    width: 100vw;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 0 3vw;
+    display: grid;
+    align-items: start;
+    gap: 1vh 1vw;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 60% 40%;
+    h2 {
+        margin-top: 20vh;
+        grid-column: 1;
+        grid-row: 1;
+        color: vars.$color-dark-purple;
+        font: 700 9rem vars.$font-secundary;
+
+        i img {
+            width: 6vw;
+            padding: 1vh 0 0 0;
+        }
+    }
+
+    p {
+        margin-top: 8vh;
+        grid-column: 1;
+        grid-row: 2;
+        color: vars.$color-dark-purple;
+        text-transform: lowercase;
+    }
+
+    figure video {
+        height: 115vh;
+        border: 10px solid vars.$color-dark-purple;
+        border-radius: 10vw;
+        margin-left: 1vw;
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+}
+
+.s-cards {
+    @include display-flex-horizontal;
+    max-width: 100%;
+    margin: -6vh 0 3vh 0;
+    box-sizing: border-box;
+    padding: 6vh 2vw;
+    background-color: #f1ad5e;
+    .cartao {
+        @include display-flex-vertical;
+        width: 35%;
+        min-width: 250px;
+
+        img {
+            margin-bottom: 1vh;
+            width: 100%;
+            max-width: 30vw;
+            border-radius: 6vw;
+            border: 10px solid vars.$color-dark-purple;
+        }
+
+        article {
+            color: vars.$color-dark-purple;
+            text-align: center;
+
+            h2, p b {
+                font: 700 3rem vars.$font-secundary;
+            }
+
+            small p {
+                text-transform: lowercase;
+                margin: 2vh 0;
+            }
+        }
+    }
+
+    button {
+        @include button-animation(vars.$color-light-purple);
+        margin: 2vh;
+    }
+}

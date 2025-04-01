@@ -6,11 +6,7 @@
         left: 2vw;
         width: 16vw;
         height: auto;
+        z-index: 1;
     }
 }
 
-.navbar {
-    h1 {
-        font: 700 5rem variables.$font-secundary;
-    }
-}

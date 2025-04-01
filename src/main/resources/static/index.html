@@ -3,87 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizza Mania</title>
+    <meta name="description" content="Pizza Mania - As melhores pizzas, sempre sustentáveis e premium. Peça já a sua!">
+    <meta name="keywords" content="Pizza, Delivery, Pizzaria, Comida Italiana, Calabresa, Quatro Queijos">
+    <meta name="author" content="Pizza Mania">
+    <title>Pizza Mania | Pizzas Artesanais e Sustentáveis</title>
+
+    <link rel="stylesheet" href="./styles/locomotive-scroll.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./img/icone-logo-garfo.png" type="image/png">
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
 <header class="cabecalho">
     <nav class="navbar">
-        <h1><img src="./img/pizza-mania-logo.png" alt="Logo da Pizzaria Mania na versão SVG."></h1>
+        <a href="./index.html">
+            <img src="./img/pizza-mania-logo.png" alt="Logotipo da Pizza Mania">
+        </a>
     </nav>
 </header>
-<main>
-    <!-- Primeira linha de cartões -->
-     <section>
-        <article>
-            <p>Where every fork <i><img src="./img/icone-logo-garfo.png" alt=""></i> is a joyful journey</p>
-            <p>Pizza Mania - an unparalleled pizza experience. Always sustainable, always premium. Follow us on social media to learn more!</p>
-        </article>
-        <figure><video src="./img/video-piece-pizza.mp4" autoplay loop muted></video></figure>
-     </section>
+<main data-scroll-container>
+    <section class="s-hero" data-scroll-section>
+        <h2 class="s-heroInfos">
+            Where every fork 
+            <i>
+                <img src="./img/icone-logo-garfo.png" alt="Logo na versão ícone, em que apresenta apenas um garfo." aria-hidden="true">
+            </i> 
+            is a joyful journey
+        </h2>
+        <p class="s-heroInfos">
+            Pizza Mania - an unparalleled pizza experience. Always sustainable, always premium. 
+            Follow us on social media to learn more!
+        </p>
+        
+        <figure>
+            <video class="s-heroVideo" src="./img/video-piece-pizza.mp4" autoplay loop muted>
+                Seu navegador não suporta vídeos.
+            </video>
+        </figure>
+    </section>
 
-    <div class="linha1">
-        <div class="cartao">
-            <div class="cartao-left">
-                <img src="img\calabresa.jpg" alt="">
-            </div>
-            <div class="cartao-right">
+    <section class="s-cards" data-scroll-section>
+        <section class="cartao" data-scroll data-scroll-speed="3">
+            <figure class="cartao-left">
+                <img src="./img/calabresa.jpg" alt="Pizza de calabresa com molho de tomate e cebola">
+            </figure>
+            <article class="cartao-right">
                 <h2>Calabresa</h2>
                 <small><p>Molho de tomate, Calabresa e Cebola</p></small>
-                <div class="preco">
-                    <p><b>R$45,00</b></p>
-                </div>
-                <button onclick="setPreco(45.00)">Comprar</button>
-            </div>
-        </div>
-        <div class="cartao">
-            <div class="cartao-left">
-                <img src="img\frango.png" alt="">
-            </div>
-            <div class="cartao-right">
+                <p><b>R$ 45,00</b></p>
+                <button onclick="setPreco(45.00)" aria-label="Comprar pizza de calabresa por R$ 45,00" role="button">Comprar</button>
+            </article>
+        </section>
+
+        <section class="cartao" data-scroll data-scroll-speed="2">
+            <figure class="cartao-left">
+                <img src="./img/frango.png" alt="Pizza de frango com molho de tomate, mussarela e molho barbecue">
+            </figure>
+            <article class="cartao-right">
                 <h2>Frango</h2>
                 <small><p>Molho de tomate, mussarela, frango e molho para churrasco</p></small>
-                <div class="preco">
-                    <p><b>R$60,00</b></p>
-                </div>
-                <button onclick="setPreco(60.00)">Comprar</button>
-            </div>
-        </div>
-    </div>
-    <!-- Segunda linha de cartões -->
-    <div class="linha2">
-        <div class="cartao">
-            <div class="cartao-left">
-                <img src="img\quatro_queijos.png" alt="">
-            </div>
-            <div class="cartao-right">
+                <p><b>R$ 60,00</b></p>
+                <button onclick="setPreco(60.00)" aria-label="Comprar pizza de frango por R$ 60,00" role="button">Comprar</button>
+            </article>
+        </section>
+    
+        <section class="cartao" data-scroll data-scroll-speed="2">
+            <figure class="cartao-left">
+                <img src="./img/quatro_queijos.png" alt="Pizza quatro queijos com provolone, mussarela, parmesão e gorgonzola">
+            </figure>
+            <article class="cartao-right">
                 <h2>Quatro Queijos</h2>
                 <small><p>Queijo provolone, mussarela, parmesão e gorgonzola</p></small>
-                <div class="preco">
-                    <p><b>R$50,00</b></p>
-                </div>
-                <button onclick="setPreco(50.00)">Comprar</button>
-            </div>
-        </div>
-        <div class="cartao">
-            <div class="cartao-left">
-                <img src="img\presunto.png" alt="">
-            </div>
-            <div class="cartao-right">
+                <p><b>R$ 50,00</b></p>
+                <button onclick="setPreco(50.00)" aria-label="Comprar pizza quatro queijos por R$ 50,00" role="button">Comprar</button>
+            </article>
+        </section>
+
+        <section class="cartao" data-scroll data-scroll-speed="1">
+            <figure class="cartao-left">
+                <img src="./img/presunto.png" alt="Pizza de presunto com mussarela, cebola e tomate">
+            </figure>
+            <article class="cartao-right">
                 <h2>Presunto</h2>
                 <small><p>Mussarela, Presunto, Cebola e Tomate</p></small>
-                <div class="preco">
-                    <p><b>R$50,00</b></p>
-                </div>
-                <button onclick="setPreco(50.00)">Comprar</button>
-            </div>
-        </div>
-    </div>
+                <p><b>R$ 50,00</b></p>
+                <button onclick="setPreco(50.00)" aria-label="Comprar pizza de presunto por R$ 50,00" role="button">Comprar</button>
+            </article>
+        </section>
+    </section>
 </main>
 
+<script src="./scripts/locomotive-scroll.min.js"></script>
+<script src="./scripts/animations-locomotive.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+<script src="./scripts/animations-gsap.js"></script>
 <script>
     function setPreco(valor) {
         localStorage.setItem('preco', valor);  // Salva o valor no localStorage

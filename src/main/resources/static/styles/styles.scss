@@ -1,5 +1,3 @@
-@use "base/reset.scss"; 
-@use "base/variables.scss"; 
-@use "base/global.scss"; 
+@forward "./base/index.scss"; 
 
-@use "./layout/menu.scss";
+@forward "./layout/index.scss";

@@ -1,18 +1,254 @@
-/* Error: There is no module with the namespace "variables".
- *   ,
- * 7 |   font: 400 3rem variables.$font-primary;
- *   |                  ^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   base\_global.scss 7:18  @use
- *   styles.scss 3:1         root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: There is no module with the namespace "variables".\a   \2577 \a 7 \2502    font: 400 3rem variables.$font-primary;\d\a   \2502                   ^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   base\\_global.scss 7:18  @use\a   styles.scss 3:1         root stylesheet';
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f3dabd;
+  font: 400 3rem "Josefin Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+.navbar img {
+  position: absolute;
+  position: fixed;
+  top: 2.6vh;
+  left: 2vw;
+  width: 16vw;
+  height: auto;
+  z-index: 1;
+}
+
+.s-hero {
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0 3vw;
+  display: grid;
+  align-items: start;
+  gap: 1vh 1vw;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 60% 40%;
+}
+.s-hero h2 {
+  margin-top: 20vh;
+  grid-column: 1;
+  grid-row: 1;
+  color: #1c1456;
+  font: 700 9rem "Boldonse", system-ui;
+}
+.s-hero h2 i img {
+  width: 6vw;
+  padding: 1vh 0 0 0;
+}
+.s-hero p {
+  margin-top: 8vh;
+  grid-column: 1;
+  grid-row: 2;
+  color: #1c1456;
+  text-transform: lowercase;
+}
+.s-hero figure video {
+  height: 115vh;
+  border: 10px solid #1c1456;
+  border-radius: 10vw;
+  margin-left: 1vw;
+  grid-column: 2;
+  grid-row: 1/span 2;
+}
+
+.s-cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2vw;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: -6vh 0 3vh 0;
+  box-sizing: border-box;
+  padding: 6vh 2vw;
+  background-color: #f1ad5e;
+}
+.s-cards .cartao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%;
+  min-width: 250px;
+}
+.s-cards .cartao img {
+  margin-bottom: 1vh;
+  width: 100%;
+  max-width: 30vw;
+  border-radius: 6vw;
+  border: 10px solid #1c1456;
+}
+.s-cards .cartao article {
+  color: #1c1456;
+  text-align: center;
+}
+.s-cards .cartao article h2, .s-cards .cartao article p b {
+  font: 700 3rem "Boldonse", system-ui;
+}
+.s-cards .cartao article small p {
+  text-transform: lowercase;
+  margin: 2vh 0;
+}
+.s-cards button {
+  cursor: pointer;
+  display: inline-block;
+  padding: 2vh 8vw;
+  border-radius: 6vw;
+  border: 6px solid #1c1456;
+  text-transform: lowercase;
+  color: #1c1456;
+  font: 400 3rem "Josefin Sans", sans-serif;
+  background-color: #c8b3ee;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  margin: 2vh;
+}
+.s-cards button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #c8b3ee;
+  border-radius: 6vw;
+  z-index: -2;
+}
+.s-cards button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgb(154.7580645161, 116.4838709677, 224.0161290323);
+  transition: all 0.3s;
+  border-radius: 6vw;
+  z-index: -1;
+}
+.s-cards button:hover {
+  color: #fff;
+}
+.s-cards button:hover:before {
+  width: 100%;
+}
+
+.form-pedido {
+  color: #1c1456;
+  background-image: url("./../img/background-image-pizzas.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+.form-pedido h2 {
+  padding-top: 16vh;
+  text-align: center;
+  font: 700 6rem "Boldonse", system-ui;
+}
+.form-pedido .forms-entrega fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-pedido .forms-entrega fieldset legend {
+  text-align: center;
+  text-transform: lowercase;
+  margin-bottom: 6vh;
+}
+.form-pedido .forms-entrega fieldset .input-container {
+  position: relative;
+  margin: 6vh 3vw;
+}
+.form-pedido .forms-entrega fieldset label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #412807;
+  text-transform: lowercase;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+.form-pedido .forms-entrega fieldset input {
+  width: 50vw;
+  margin: 2vh 0;
+  border: none;
+  padding: 10px 0;
+  border-bottom: solid 4px #c8b3ee;
+  background: transparent;
+  font-size: 2.5rem;
+  color: #1c1456;
+  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  outline: none;
+}
+.form-pedido .forms-entrega fieldset input:focus, .form-pedido .forms-entrega fieldset input:valid {
+  border-bottom-color: #1c1456;
+}
+.form-pedido .forms-entrega fieldset input:focus + label, .form-pedido .forms-entrega fieldset input:valid + label {
+  top: 0;
+  font-size: 3rem;
+  color: #1c1456;
+}
+.form-pedido .forms-entrega fieldset button {
+  cursor: pointer;
+  display: inline-block;
+  padding: 2vh 8vw;
+  border-radius: 6vw;
+  border: 6px solid #1c1456;
+  text-transform: lowercase;
+  color: #1c1456;
+  font: 400 3rem "Josefin Sans", sans-serif;
+  background-color: #c8b3ee;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  margin: 5vh;
+}
+.form-pedido .forms-entrega fieldset button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #c8b3ee;
+  border-radius: 6vw;
+  z-index: -2;
+}
+.form-pedido .forms-entrega fieldset button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgb(154.7580645161, 116.4838709677, 224.0161290323);
+  transition: all 0.3s;
+  border-radius: 6vw;
+  z-index: -1;
+}
+.form-pedido .forms-entrega fieldset button:hover {
+  color: #fff;
+}
+.form-pedido .forms-entrega fieldset button:hover:before {
+  width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */
