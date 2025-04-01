@@ -1,0 +1,11 @@
+@use "./variables" as vars;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: vars.$background-color;
+  font: 400 3rem vars.$font-primary;
+  overflow-x: hidden;
+}
