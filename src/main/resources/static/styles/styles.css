@@ -10,7 +10,7 @@ html {
 
 body {
   background-color: #f3dabd;
-  font: 400 3rem "Josefin Sans", sans-serif;
+  font: 400 2.5rem "Josefin Sans", sans-serif;
   overflow-x: hidden;
 }
 
@@ -19,7 +19,7 @@ body {
   position: fixed;
   top: 2.6vh;
   left: 2vw;
-  width: 16vw;
+  width: clamp(160px, 16vw, 200px);
   height: auto;
   z-index: 1;
 }
@@ -28,38 +28,51 @@ body {
   width: 100vw;
   min-height: 100vh;
   box-sizing: border-box;
-  padding: 0 3vw;
+  padding: 0 3vw 12vh 3vw;
   display: grid;
-  align-items: start;
-  gap: 1vh 1vw;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 60% 40%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+  gap: 4vw;
+}
+.s-hero .s-hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4vh;
 }
 .s-hero h2 {
-  margin-top: 20vh;
-  grid-column: 1;
-  grid-row: 1;
+  margin-top: 10vh;
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-weight: 700;
+  font-family: "Boldonse", system-ui;
   color: #1c1456;
-  font: 700 9rem "Boldonse", system-ui;
 }
 .s-hero h2 i img {
-  width: 6vw;
-  padding: 1vh 0 0 0;
+  width: clamp(30px, 6vw, 10vw);
 }
 .s-hero p {
-  margin-top: 8vh;
-  grid-column: 1;
-  grid-row: 2;
+  max-width: 40ch;
   color: #1c1456;
   text-transform: lowercase;
 }
+.s-hero figure {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 .s-hero figure video {
-  height: 115vh;
+  margin-top: 6vh;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
   border: 10px solid #1c1456;
   border-radius: 10vw;
-  margin-left: 1vw;
-  grid-column: 2;
-  grid-row: 1/span 2;
+}
+@supports (grid-template-rows: subgrid) {
+  .s-hero {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 
 .s-cards {
@@ -84,7 +97,7 @@ body {
 .s-cards .cartao img {
   margin-bottom: 1vh;
   width: 100%;
-  max-width: 30vw;
+  max-width: clamp(200px, 30vw, 450px);
   border-radius: 6vw;
   border: 10px solid #1c1456;
 }
@@ -93,7 +106,7 @@ body {
   text-align: center;
 }
 .s-cards .cartao article h2, .s-cards .cartao article p b {
-  font: 700 3rem "Boldonse", system-ui;
+  font: 700 2.5rem "Boldonse", system-ui;
 }
 .s-cards .cartao article small p {
   text-transform: lowercase;
@@ -102,12 +115,12 @@ body {
 .s-cards button {
   cursor: pointer;
   display: inline-block;
-  padding: 2vh 8vw;
+  padding: clamp(1.5vh, 2vw, 3vh) 5vw;
   border-radius: 6vw;
   border: 6px solid #1c1456;
   text-transform: lowercase;
   color: #1c1456;
-  font: 400 3rem "Josefin Sans", sans-serif;
+  font: 400 2rem "Josefin Sans", sans-serif;
   background-color: #c8b3ee;
   position: relative;
   overflow: hidden;
@@ -156,7 +169,7 @@ body {
 .form-pedido h2 {
   padding-top: 16vh;
   text-align: center;
-  font: 700 6rem "Boldonse", system-ui;
+  font: 700 4rem "Boldonse", system-ui;
 }
 .form-pedido .forms-entrega fieldset {
   border: none;
@@ -178,7 +191,7 @@ body {
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #412807;
   text-transform: lowercase;
@@ -186,13 +199,14 @@ body {
   pointer-events: none;
 }
 .form-pedido .forms-entrega fieldset input {
-  width: 50vw;
+  width: clamp(50vw, 100%, 80vw);
+  min-width: 50vw;
   margin: 2vh 0;
   border: none;
   padding: 10px 0;
   border-bottom: solid 4px #c8b3ee;
   background: transparent;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #1c1456;
   transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
   outline: none;
@@ -202,24 +216,24 @@ body {
 }
 .form-pedido .forms-entrega fieldset input:focus + label, .form-pedido .forms-entrega fieldset input:valid + label {
   top: 0;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #1c1456;
 }
 .form-pedido .forms-entrega fieldset button {
   cursor: pointer;
   display: inline-block;
-  padding: 2vh 8vw;
+  padding: clamp(1.5vh, 2vw, 3vh) 5vw;
   border-radius: 6vw;
   border: 6px solid #1c1456;
   text-transform: lowercase;
   color: #1c1456;
-  font: 400 3rem "Josefin Sans", sans-serif;
+  font: 400 2rem "Josefin Sans", sans-serif;
   background-color: #c8b3ee;
   position: relative;
   overflow: hidden;
   z-index: 1;
   transition: all 0.3s ease-in-out;
-  margin: 5vh;
+  margin: 5vh 0 13vh 0;
 }
 .form-pedido .forms-entrega fieldset button:after {
   content: "";

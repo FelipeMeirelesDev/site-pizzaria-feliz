@@ -12,7 +12,7 @@
     h2 {
        padding-top: 16vh;
         text-align: center;
-        font: 700 6rem vars.$font-secundary;
+        font: 700 4rem vars.$font-secundary;
     } 
 
     .forms-entrega {
@@ -36,7 +36,7 @@
                 top: 50%;
                 left: 10px;
                 transform: translateY(-50%);
-                font-size: 2.5rem;
+                font-size: 2rem;
                 font-weight: 700;
                 color: #412807;
                 text-transform: lowercase;
@@ -45,13 +45,14 @@
             }
 
             input {
-                width: 50vw;
+                width: clamp(50vw, 100%, 80vw); 
+                min-width: 50vw;
                 margin: 2vh 0;
                 border: none;
                 padding: 10px 0;
                 border-bottom: solid 4px vars.$color-light-purple;
                 background: transparent;
-                font-size: 2.5rem;
+                font-size: 2rem;
                 color: vars.$color-dark-purple;
                 transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
                 outline: none;
@@ -64,14 +65,14 @@
                 &:focus + label,
                 &:valid + label {
                     top: 0;
-                    font-size: 3rem;
+                    font-size: 2.5rem;
                     color: vars.$color-dark-purple;
                 }
             }
 
             button {
                 @include mixins.button-animation(vars.$color-light-purple);
-                margin: 5vh;
+                margin: 5vh 0 13vh 0;
             }
         }
     }
