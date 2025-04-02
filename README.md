@@ -1,6 +1,8 @@
 # PizzariaMania
 
-Este é um sistema completo para gerenciar uma pizzaria, incluindo tanto o **back-end** quanto o **front-end**. Ele permite que os usuários visualizem pizzas disponíveis, façam pedidos e gerenciem o sistema de forma simples e eficiente. Foi desenvolvido utilizando **Java** com o **Spring Boot** para o back-end, e tecnologias como **HTML**, **CSS** e **JavaScript** no front-end.
+Este é um sistema completo para gerenciar uma pizzaria, incluindo tanto o back-end quanto o front-end. Ele permite que os usuários visualizem pizzas disponíveis, façam pedidos e gerenciem o sistema de forma simples e eficiente. Foi desenvolvido utilizando Java com o Spring Boot para o back-end e tecnologias como HTML, CSS e JavaScript no front-end. 
+
+**Créditos**: Agradecimentos especiais à [Sophia Alexandra](https://github.com/sophi-hub) por ter contribuído significativamente na melhoria do front-end originalmente desenvolvido por mim.
 <img src="https://i.imgur.com/ouvDO9Q.png">
 ## Funcionalidades
 1. **Back-End**:
