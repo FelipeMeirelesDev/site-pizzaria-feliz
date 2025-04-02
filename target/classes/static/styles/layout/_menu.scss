@@ -4,7 +4,7 @@
         position: fixed;
         top: 2.6vh;
         left: 2vw;
-        width: 16vw;
+        width: clamp(160px, 16vw, 200px);
         height: auto;
         z-index: 1;
     }
