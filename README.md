@@ -1,7 +1,7 @@
 # PizzariaMania
 
 Este é um sistema completo para gerenciar uma pizzaria, incluindo tanto o **back-end** quanto o **front-end**. Ele permite que os usuários visualizem pizzas disponíveis, façam pedidos e gerenciem o sistema de forma simples e eficiente. Foi desenvolvido utilizando **Java** com o **Spring Boot** para o back-end, e tecnologias como **HTML**, **CSS** e **JavaScript** no front-end.
-<img src="https://i.imgur.com/jvvyOON.png">
+<img src="https://i.imgur.com/ouvDO9Q.png">
 ## Funcionalidades
 1. **Back-End**:
    - Listar todos os pedidos.
@@ -47,8 +47,8 @@ Certifique-se de que as seguintes dependências estão instaladas:
 - **Java** (versão 17 ou superior).
 - **Maven**.
 - **MySQL**.
-- **Um editor de texto/IDE** (recomendado: IntelliJ IDEA ou Eclipse para o backend e Visual Studio Code para o frontend).
-- Um navegador web (Chrome, Firefox, etc.).
+- **Um editor de texto/IDE** (recomendado: IntelliJ IDEA para o backend e Visual Studio Code para o frontend).
+- **Um navegador web** (Chrome, Firefox, etc.).
 
 ### Passo a Passo
 1. **Clone o Repositório**: Abra o terminal e execulte:
@@ -67,7 +67,6 @@ spring.datasource.password=sua_senha //Se não tiver senha, deixe em branco.
 ```
 
 3. **Execultando o Backend**:
-   - Clone esse repositório
    - importe o projeto para sua IDE favorita
    - Execute a aplicação backend via sua IDE (``src/main/java/com.sistema.pizzariamania/PizzariaMania.Java``) ou Utilizando esse comando: (``mvn spring-boot:run``)
 
